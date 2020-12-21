@@ -43,7 +43,7 @@
     </style>
 </head>
 
-<body id="body">
+<body>
     <div id="content">
         <canvas id="bgCanvas"></canvas>
         <div id="overlay">
@@ -54,6 +54,7 @@
 
 
     <script>
+        var width,height;
         var txt;
         var i = 0;
 
@@ -62,12 +63,9 @@
 
         var background = document.getElementById("bgCanvas");
         var bgCtx = background.getContext("2d");
-        var width = window.innerWidth;
-        var height = window.innerHeight;
 
-        background.width = width;
-        background.height = height;
-
+        window.addEventListener('resize', resizeCanvas, false);
+        resizeCanvas();
 
         function Star(options) {
             this.size = Math.random() * 2;
@@ -118,6 +116,15 @@
         }
 
         animate();
+
+        function resizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+
+            background.width = width;
+            background.height = height;
+
+        }
     </script>
 
 </body>
