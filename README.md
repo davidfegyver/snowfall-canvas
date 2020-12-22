@@ -1,2 +1,6 @@
 # snowfall-canvas
-A simple JS+htmlCanvas snow falling system
+
+A canvas html background, with falling snow
+:P 
+
+I should do a readme now
